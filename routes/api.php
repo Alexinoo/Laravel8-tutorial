@@ -45,3 +45,10 @@ Route::get('/product/{id?}', function ($id = null) {
 
     return 'Product Id is : ' . $id;
 });
+
+
+//
+Route::match(['get', 'post'], 'students', function (Request $request) {
+
+    return 'Requested method is ' . $request->method();
+});
