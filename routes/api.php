@@ -24,3 +24,10 @@ Route::get('/users/{name}', function ($name) {
 
     return 'Hi ' . $name;
 });
+
+
+// Optional Parameters
+Route::get('/user/{name?}', function ($name = null) {
+
+    return 'Hi ' . $name;
+});
