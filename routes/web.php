@@ -21,3 +21,5 @@ Route::get('/', function () {
 Route::get('home', [App\Http\Controllers\HomeController::class, 'index']);
 
 Route::get('edit/{id}', [App\Http\Controllers\HomeController::class, 'edit']);
+
+Route::get('user', [App\Http\Controllers\UserController::class, 'index']);
