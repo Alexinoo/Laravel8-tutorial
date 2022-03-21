@@ -36,7 +36,7 @@ Route::get('/user/{name?}', function ($name = null) {
 Route::get('/products/{name?}', function ($name = null) {
 
     return 'Hi ' . $name;
-})->where(['name' => '[a-zA-Z]+']);
+});
 
 
 
@@ -44,4 +44,4 @@ Route::get('/products/{name?}', function ($name = null) {
 Route::get('/product/{id?}', function ($id = null) {
 
     return 'Product Id is : ' . $id;
-})->where(['id' => '[0-9]+']);
+});
