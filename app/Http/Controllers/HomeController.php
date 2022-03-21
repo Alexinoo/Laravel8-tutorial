@@ -11,4 +11,9 @@ class HomeController extends Controller
 
         return 'Hi from HomeController';
     }
+    public function edit($id)
+    {
+
+        return 'Edit id : ' . $id;
+    }
 }
