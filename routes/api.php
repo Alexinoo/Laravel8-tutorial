@@ -37,3 +37,11 @@ Route::get('/products/{name?}', function ($name = null) {
 
     return 'Hi ' . $name;
 })->where(['name' => '[a-zA-Z]+']);
+
+
+
+// Restrict Numeric Only constraint - Accepts only numeric values
+Route::get('/product/{id?}', function ($id = null) {
+
+    return 'Product Id is : ' . $id;
+})->where(['id' => '[0-9]+']);
