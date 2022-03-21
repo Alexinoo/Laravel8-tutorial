@@ -47,8 +47,15 @@ Route::get('/product/{id?}', function ($id = null) {
 });
 
 
-//
+// Register routes that can match with Http Verbs
 Route::match(['get', 'post'], 'students', function (Request $request) {
+
+    return 'Requested method is ' . $request->method();
+});
+
+
+// Register routes that can respond to all Http Verbs
+Route::any('posts', function (Request $request) {
 
     return 'Requested method is ' . $request->method();
 });
