@@ -9,6 +9,8 @@ class UserController extends Controller
     public function index()
     {
 
-        return view('user');
+        $name = 'Jennifer';
+
+        return view('user', compact('name'));
     }
 }
