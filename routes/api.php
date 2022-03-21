@@ -31,3 +31,9 @@ Route::get('/user/{name?}', function ($name = null) {
 
     return 'Hi ' . $name;
 });
+
+//Restrict Characters Only constraint - Accepts only character values
+Route::get('/products/{name?}', function ($name = null) {
+
+    return 'Hi ' . $name;
+})->where(['name' => '[a-zA-Z]+']);
