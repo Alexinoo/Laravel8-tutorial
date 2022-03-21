@@ -11,6 +11,12 @@ class UserController extends Controller
 
         $name = 'Jennifer';
 
-        return view('user', compact('name'));
+        $userDetails = array(
+            'name' => 'John Smith',
+            'email' => 'johnsmith@test.com',
+            'phone' => '0755543918',
+        );
+
+        return view('user', compact('name', 'userDetails'));
     }
 }
