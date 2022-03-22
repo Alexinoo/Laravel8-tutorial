@@ -53,4 +53,14 @@ class ClientController extends Controller
 
         return $post->json();
     }
+
+    public function deletePost($id)
+    {
+        $url = 'https://jsonplaceholder.typicode.com/post/' . $id;
+
+        // Pass as an associative array
+        $post = Http::delete($url);
+
+        return $post->json();
+    }
 }
