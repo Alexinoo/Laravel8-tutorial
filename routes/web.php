@@ -33,3 +33,7 @@ Route::get('/posts', [App\Http\Controllers\ClientController::class, 'getAllPosts
 
 // Http Client - Fetch SIngle Post BY ID
 Route::get('/post/{id}', [App\Http\Controllers\ClientController::class, 'getPostById']);
+
+
+// Http Client - Add Post
+Route::get('/add-post ', [App\Http\Controllers\ClientController::class, 'addPost']);
