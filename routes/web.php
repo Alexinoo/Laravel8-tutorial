@@ -64,3 +64,17 @@ Route::get('getFullUrl', [App\Http\Controllers\UserController::class, 'getFullUr
 // LoginController
 Route::get('login', [App\Http\Controllers\LoginController::class, 'index']);
 Route::post('login', [App\Http\Controllers\LoginController::class, 'loginSubmit']);
+
+
+//Middleware
+
+//Apply Middleware on a Single Route
+// Route::get('login', [App\Http\Controllers\LoginController::class, 'index'])->middleware('checkuser');
+
+//Apply Middleware on a group of  Routes
+Route::middleware(['checkuser'])->group(function () {
+
+    // LoginController
+    Route::get('login', [App\Http\Controllers\LoginController::class, 'index']);
+    Route::post('login', [App\Http\Controllers\LoginController::class, 'loginSubmit']);
+});
