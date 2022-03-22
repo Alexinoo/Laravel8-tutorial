@@ -78,3 +78,9 @@ Route::middleware(['checkuser'])->group(function () {
     Route::get('login', [App\Http\Controllers\LoginController::class, 'index']);
     Route::post('login', [App\Http\Controllers\LoginController::class, 'loginSubmit']);
 });
+
+
+// HTTP SESSIONS
+Route::get('session/get', [App\Http\Controllers\SessionController::class, 'getSessionData']);
+Route::get('session/store', [App\Http\Controllers\SessionController::class, 'storeSessionData']);
+Route::get('session/remove', [App\Http\Controllers\SessionController::class, 'deleteSessionData']);
