@@ -8,14 +8,16 @@ class Header extends Component
 {
 
     public $name;
+    public $fruits;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($name)
+    public function __construct($name, $fruits)
     {
         $this->name = $name;
+        $this->fruits = $fruits;
     }
 
     /**
@@ -25,6 +27,8 @@ class Header extends Component
      */
     public function render()
     {
-        return view('components.header');
+        return view(
+            'components.header'
+        );
     }
 }
