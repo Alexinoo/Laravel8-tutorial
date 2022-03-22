@@ -20,10 +20,16 @@
                             <div class="form-group mb-3">
                                 <label for="email">Email</label>
                                 <input type="email" name="email" id="email" class="form-control">
+                                @error('email')
+                                <span class="text-danger">{{$message}}</span>                                    
+                                @enderror
                             </div>
                             <div class="form-group mb-3">
                                 <label for="password">Password</label>
                                 <input type="password" name="password" id="password" class="form-control">
+                                @error('password')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
 
                             <div class="form-group">
