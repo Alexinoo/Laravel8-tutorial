@@ -59,3 +59,8 @@ Route::get('getPath', [App\Http\Controllers\UserController::class, 'getPath']);
 Route::get('getUrl', [App\Http\Controllers\UserController::class, 'getUrl']);
 //$request->fullUrl()
 Route::get('getFullUrl', [App\Http\Controllers\UserController::class, 'getFullUrl']);
+
+
+// LoginController
+Route::get('login', [App\Http\Controllers\LoginController::class, 'index']);
+Route::post('login', [App\Http\Controllers\LoginController::class, 'loginSubmit']);
