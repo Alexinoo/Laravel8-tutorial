@@ -38,4 +38,19 @@ class ClientController extends Controller
 
         return $post->json();
     }
+
+
+    public function updatePost()
+    {
+        $url = 'https://jsonplaceholder.typicode.com/posts/100';
+
+        // Pass as an associative array
+        $post = Http::put($url, [
+
+            'title' => "Updated title",
+            'body' => "Updated Desc"
+        ]);
+
+        return $post->json();
+    }
 }
