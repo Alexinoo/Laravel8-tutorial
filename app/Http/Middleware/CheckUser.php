@@ -16,6 +16,8 @@ class CheckUser
      */
     public function handle(Request $request, Closure $next)
     {
+        echo "CheckUser is applied in this route";
+
         return $next($request);
     }
 }
