@@ -49,3 +49,13 @@ Route::get('delete-post/{id}', [App\Http\Controllers\ClientController::class, 'd
 
 // FLUENT STRINGS
 Route::get('fluent-string', [App\Http\Controllers\FluentController::class, 'index']);
+
+// Http Methods
+//$request->method()
+Route::get('getMethod', [App\Http\Controllers\UserController::class, 'getMethod']);
+//$request->Path()
+Route::get('getPath', [App\Http\Controllers\UserController::class, 'getPath']);
+//$request->url()
+Route::get('getUrl', [App\Http\Controllers\UserController::class, 'getUrl']);
+//$request->fullUrl()
+Route::get('getFullUrl', [App\Http\Controllers\UserController::class, 'getFullUrl']);
