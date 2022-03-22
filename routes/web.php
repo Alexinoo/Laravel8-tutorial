@@ -41,3 +41,7 @@ Route::get('/add-post ', [App\Http\Controllers\ClientController::class, 'addPost
 
 // Http Client - Update Post
 Route::get('/update-post ', [App\Http\Controllers\ClientController::class, 'updatePost']);
+
+
+// Http Client - Delete Post
+Route::get('/delete-post/{id}', [App\Http\Controllers\ClientController::class, 'deletePost']);
