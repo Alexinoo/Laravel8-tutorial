@@ -16,6 +16,14 @@ class LoginController extends Controller
     {
 
         // return $request->all(); //returns all the input fields 
+
+
+        //Added Validation for Email/Password fields
+        $validatedData = $request->validate([
+            'email' => 'required | email',
+            'password' => 'required | min:5|max:12'
+        ]);
+
         $vEmail = $request->input('email');
         $vPassword = $request->input('password');
 
