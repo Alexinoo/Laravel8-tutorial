@@ -15,4 +15,13 @@ class ClientController extends Controller
 
         return $response->json();
     }
+
+    public function getPostById($id)
+    {
+        $url = 'https://jsonplaceholder.typicode.com/posts/' . $id;
+
+        $post = Http::get($url);
+
+        return $post->json();
+    }
 }
