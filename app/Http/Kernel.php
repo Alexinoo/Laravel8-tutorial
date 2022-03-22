@@ -21,6 +21,10 @@ class Kernel extends HttpKernel
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
+
+        //Added Globally - Applies on every page/route
+        //\App\Http\Middleware\CheckUser::class,
+
     ];
 
     /**
@@ -37,12 +41,18 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+
+            //  Added on Web.php - Applied only on web.php routes
+            //   \App\Http\Middleware\CheckUser::class,
         ],
 
         'api' => [
             // \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
             'throttle:api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+
+            //Added on api.php - Applied only on api.php routes
+            //  \App\Http\Middleware\CheckUser::class,
         ],
     ];
 
@@ -54,6 +64,10 @@ class Kernel extends HttpKernel
      * @var array<string, class-string|string>
      */
     protected $routeMiddleware = [
+
+        //Added onsingle/group of routes  e.g Login routes - Applied only on api.php routes
+        'checkuser' => \App\Http\Middleware\CheckUser::class,
+
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,
