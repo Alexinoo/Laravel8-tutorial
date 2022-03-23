@@ -84,3 +84,9 @@ Route::middleware(['checkuser'])->group(function () {
 Route::get('session/get', [App\Http\Controllers\SessionController::class, 'getSessionData']);
 Route::get('session/store', [App\Http\Controllers\SessionController::class, 'storeSessionData']);
 Route::get('session/remove', [App\Http\Controllers\SessionController::class, 'deleteSessionData']);
+
+
+//POSTS - CONNECTING WITH THE DB
+Route::get('post', [App\Http\Controllers\PostController::class, 'getAllPosts']);
+Route::get('post/add-post', [App\Http\Controllers\PostController::class, 'addPost']);
+Route::post('post/store-post', [App\Http\Controllers\PostController::class, 'storePost']);
