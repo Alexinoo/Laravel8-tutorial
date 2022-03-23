@@ -18,12 +18,16 @@
                         </h5>
                     </div>
                     <div class="card-body">
+                        @if(Session::has('post_deleted'))
+                            <div class="alert alert-success">{{ Session::get('post_deleted')}}</div>
+                        @endif
                        <table class="table table-striped">
                            <thead>
                                <tr>
                                    <th>#</th>
                                    <th>Title</th>
                                    <th>Body</th>
+                                   <th>Operations</th>
                                </tr>
                            </thead>
                            <tbody>
@@ -32,6 +36,13 @@
                                    <td>{{$value->id}}</td>
                                    <td>{{$value->title}}</td>
                                    <td>{{$value->body}}</td>
+                                   <td>
+                                       <a href="{{url('post/single-post/'.$value->id)}}" class="btn btn-primary btn-sm">View</a>
+
+                                       <a href="{{url('post/edit-post/'.$value->id)}}" class="btn btn-info btn-sm">Edit</a>
+                                 
+                                       <a href="{{url('post/delete-post/'.$value->id)}}" class="btn btn-danger btn-sm">Delete</a>
+                                   </td>
                                </tr>
                                @endforeach
                               
