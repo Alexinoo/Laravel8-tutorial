@@ -101,3 +101,4 @@ Route::get('delete-post/{id}', [App\Http\Controllers\PostController::class, 'del
 // JOINS
 Route::get('inner-join', [App\Http\Controllers\PostController::class, 'innerJoinClause']);
 Route::get('left-join', [App\Http\Controllers\PostController::class, 'leftJoinClause']);
+Route::get('right-join', [App\Http\Controllers\PostController::class, 'rightJoinClause']);
