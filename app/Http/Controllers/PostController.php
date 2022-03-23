@@ -29,4 +29,35 @@ class PostController extends Controller
 
         return back()->with('post_created', 'Post has been created successfully');
     }
+
+    public function getSinglePostById($id)
+    {
+        $post = DB::table('posts')->where(['id' => $id])->first();
+
+        return view('Post.single-post', compact('post'));
+    }
+
+    public function editPost($id)
+    {
+        $post = DB::table('posts')->where(['id' => $id])->first();
+
+        return view('Post.edit-post', compact('post'));
+    }
+
+    public function updatePost(Request $request, $id)
+    {
+        DB::table('posts')->where(['id' => $id])->update([
+            'title' => $request->title,
+            'body' => $request->body
+        ]);
+
+        return back()->with('post_updated', 'Post has been updated successfully');
+    }
+
+    public function deletePost($id)
+    {
+        DB::table('posts')->where(['id' => $id])->delete();
+
+        return back()->with('post_deleted', 'Post deleted successfully');
+    }
 }
