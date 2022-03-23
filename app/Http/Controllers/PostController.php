@@ -60,4 +60,13 @@ class PostController extends Controller
 
         return back()->with('post_deleted', 'Post deleted successfully');
     }
+
+    public function innerJoinClause()
+    {
+        $results =  DB::table('post_owners')
+            ->join('posts', 'post_owners.id', '=', 'posts.owner_id')
+            ->select('post_owners.name', 'posts.title', 'posts.body')
+            ->get();
+        return $results;
+    }
 }
