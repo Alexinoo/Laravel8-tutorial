@@ -97,3 +97,6 @@ Route::get('post/edit-post/{id}', [App\Http\Controllers\PostController::class, '
 Route::post('post/update-post/{id}', [App\Http\Controllers\PostController::class, 'updatePost']);
 
 Route::get('delete-post/{id}', [App\Http\Controllers\PostController::class, 'deletePost']);
+
+// JOINS
+Route::get('inner-join', [App\Http\Controllers\PostController::class, 'innerJoinClause']);
