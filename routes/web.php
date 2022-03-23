@@ -86,7 +86,7 @@ Route::get('session/store', [App\Http\Controllers\SessionController::class, 'sto
 Route::get('session/remove', [App\Http\Controllers\SessionController::class, 'deleteSessionData']);
 
 
-//POSTS - CONNECTING WITH THE DB
+//POSTS - USING QUERY BUILDER
 Route::get('post', [App\Http\Controllers\PostController::class, 'getAllPosts']);
 Route::get('post/add-post', [App\Http\Controllers\PostController::class, 'addPost']);
 Route::post('post/store-post', [App\Http\Controllers\PostController::class, 'storePost']);
@@ -102,3 +102,7 @@ Route::get('delete-post/{id}', [App\Http\Controllers\PostController::class, 'del
 Route::get('inner-join', [App\Http\Controllers\PostController::class, 'innerJoinClause']);
 Route::get('left-join', [App\Http\Controllers\PostController::class, 'leftJoinClause']);
 Route::get('right-join', [App\Http\Controllers\PostController::class, 'rightJoinClause']);
+
+
+//POSTS - USING MODEL
+Route::get('all-posts', [App\Http\Controllers\PostController::class, 'getAllPostsUsingModel']);
