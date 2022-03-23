@@ -64,8 +64,16 @@ class PostController extends Controller
     public function innerJoinClause()
     {
         $results =  DB::table('post_owners')
-            ->join('posts', 'post_owners.id', '=', 'posts.owner_id')
-            ->select('post_owners.name', 'posts.title', 'posts.body')
+            ->join('posts', ['post_owners.id' => 'posts.owner_id'])
+            ->select('*')
+            ->get();
+        return $results;
+    }
+    public function leftJoinClause()
+    {
+        $results =  DB::table('post_owners')
+            ->leftjoin('posts', ['post_owners.id' => 'posts.owner_id'])
+            ->select('*')
             ->get();
         return $results;
     }
