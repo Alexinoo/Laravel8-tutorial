@@ -90,3 +90,10 @@ Route::get('session/remove', [App\Http\Controllers\SessionController::class, 'de
 Route::get('post', [App\Http\Controllers\PostController::class, 'getAllPosts']);
 Route::get('post/add-post', [App\Http\Controllers\PostController::class, 'addPost']);
 Route::post('post/store-post', [App\Http\Controllers\PostController::class, 'storePost']);
+
+Route::get('post/single-post/{id}', [App\Http\Controllers\PostController::class, 'getSinglePostById']);
+
+Route::get('post/edit-post/{id}', [App\Http\Controllers\PostController::class, 'editPost']);
+Route::post('post/update-post/{id}', [App\Http\Controllers\PostController::class, 'updatePost']);
+
+Route::get('delete-post/{id}', [App\Http\Controllers\PostController::class, 'deletePost']);
