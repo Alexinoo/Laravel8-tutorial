@@ -117,3 +117,9 @@ Route::get('test', function () {
 
     return view('Test.test');
 });
+
+
+
+//FILE UPLOAD
+Route::get('upload', [App\Http\Controllers\UploadController::class, 'uploadForm']);
+Route::post('upload', [App\Http\Controllers\UploadController::class, 'uploadFile']);
