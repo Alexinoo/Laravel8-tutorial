@@ -9,9 +9,14 @@
         <div class="col-md-12">
             <div class="card my-3">
                 <div class="card-header text-center">
-                    <h4>Students</h4>
+                    <h4>Students
+                        <a href="{{url('add-student')}}" class="btn btn-info float-end">Add Student</a>
+                    </h4>
                 </div>
                 <div class="card-body">
+                        @if(Session::has('status'))
+                        <div class="alert alert-success">{{Session::get('status')}}</div>
+                    @endif
                       <table class="table table-striped">
                             <thead>
                                 <tr>
@@ -19,23 +24,25 @@
                                     <th>Reg No</th>
                                     <th>Name</th>
                                     <th>Course</th>
+                                    <th>Created At</th>
                                     <th>Operations</th>
                                 </tr>
                             </thead>
                             <tbody>
-
-                                @for($i = 1; $i < count($students); $i++)
-                                      <tr>
-                                            <td>{{$i}}</td>
-                                            <td>{{$students[$i ] ['regNo']}}</td>
-                                            <td>{{$students[$i ]['name'] }}</td>
-                                            <td>{{$students[$i ]['course'] }}</td>
-                                            <td>
-                                                <a href="{{ url('edit-student /'.$students[$i ] ['id'])}}" class = "btn btn-primary btn-sm">Edit</a>
-                                                <a href="{{ url('delete-student/'.$students[$i ] ['id'])}}" class = "btn btn-danger btn-sm">Delete</a>
-                                            </td>
+                                @foreach($students as $key => $value)
+                                    <tr>
+                                        <td>{{ $value->id}}</td>
+                                        <td>{{ $value->regNo}}</td>
+                                        <td>{{ $value->name}}</td>
+                                        <td>{{ $value->course }}</td>
+                                        <td>{{ $value->created_at->format('d-m-Y') }}</td>
+                                        <td>
+                                            <a href="{{ url('edit-student/'. $value->id)}}" class="btn btn-info">Edit</a>
+                                            <a href="{{ url('delete-student/'. $value->id)}}" class="btn btn-danger">Delete</a>
+                                        </td>
                                     </tr>
-                                @endfor                              
+                                @endforeach
+                                            
                             </tbody>
                         </table>
                     </div>
