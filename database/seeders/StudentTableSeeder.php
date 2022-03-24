@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 use Faker\Factory as Faker;
 
 class StudentTableSeeder extends Seeder
@@ -20,12 +21,12 @@ class StudentTableSeeder extends Seeder
 
         $faker = Faker::create();
 
-        foreach (range(1, 100)  as $index) {
+        foreach (range(1, 20)  as $index) {
 
             DB::table('students')->insert([
-                'regNo' => $faker->sentence(17),
-                'name' => $faker->sentence(15),
-                'course' => $faker->paragraph(1)
+                'regNo' => Str::of($faker->word(3))->upper(),
+                'name' => $faker->name,
+                'course' =>  Str::of($faker->sentence(1))->slug('-')
             ]);
         }
 
