@@ -123,3 +123,10 @@ Route::get('test', function () {
 //FILE UPLOAD
 Route::get('upload', [App\Http\Controllers\UploadController::class, 'uploadForm']);
 Route::post('upload', [App\Http\Controllers\UploadController::class, 'uploadFile']);
+
+
+// PAYMENT FACADES
+Route::get('payment', function () {
+
+    return App\PaymentGateway\Payment::process();
+});
