@@ -106,3 +106,10 @@ Route::get('right-join', [App\Http\Controllers\PostController::class, 'rightJoin
 
 //POSTS - USING MODEL
 Route::get('all-posts', [App\Http\Controllers\PostController::class, 'getAllPostsUsingModel']);
+
+
+// BLADE TEMPLATE - Tuts
+Route::get('test', function(){
+
+    return view('Test.test');
+});
