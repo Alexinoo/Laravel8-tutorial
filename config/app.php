@@ -162,6 +162,9 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
+        // Register Service Provider
+        App\Providers\PaymentServiceProvider::class,
+
         /*
          * Package Service Providers...
          */
@@ -229,6 +232,9 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        // Register Payment Facades in the aliases
+        'Payment' => App\PaymentGateway\PaymentFacade::class,
 
     ],
 
