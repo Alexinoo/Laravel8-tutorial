@@ -109,7 +109,7 @@ Route::get('all-posts', [App\Http\Controllers\PostController::class, 'getAllPost
 
 
 // BLADE TEMPLATE - Tuts
-Route::get('test', function(){
+Route::get('test', function () {
 
     return view('Test.test');
 });
