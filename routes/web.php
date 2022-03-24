@@ -110,6 +110,11 @@ Route::get('all-posts', [App\Http\Controllers\PostController::class, 'getAllPost
 
 //STUDENTS - USING MODEL
 Route::get('students', [App\Http\Controllers\StudentController::class, 'index']);
+Route::get('add-student', [App\Http\Controllers\StudentController::class, 'create']);
+Route::post('store-student', [App\Http\Controllers\StudentController::class, 'store']);
+Route::get('edit-student/{id}', [App\Http\Controllers\StudentController::class, 'edit']);
+Route::post('update-student/{id}', [App\Http\Controllers\StudentController::class, 'update']);
+Route::get('delete-student/{id}', [App\Http\Controllers\StudentController::class, 'destroy']);
 
 
 // BLADE TEMPLATE - Tuts
