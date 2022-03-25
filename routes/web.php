@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MailController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -152,3 +153,8 @@ Route::get('payment', function () {
 
     return App\PaymentGateway\Payment::process();
 });
+
+
+// SEND EMAIL
+
+Route::get('send-email', [MailController::class, 'SendEmail']);
