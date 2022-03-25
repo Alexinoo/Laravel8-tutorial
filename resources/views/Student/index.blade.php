@@ -59,11 +59,11 @@
  <script>
   @if(Session::has('status'))
   toastr.options =
-  {
-  	"closeButton" : true,
-  	"progressBar" : true,
-    "positionClass" : 'toast-bottom-right'
-  }
+            {
+                "closeButton" : true,
+                "progressBar" : true,
+                "positionClass" : 'toast-bottom-right'
+            }
   		toastr.success("{{ session('status') }}");
   @endif
 
