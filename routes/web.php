@@ -116,6 +116,14 @@ Route::get('edit-student/{id}', [App\Http\Controllers\StudentController::class, 
 Route::post('update-student/{id}', [App\Http\Controllers\StudentController::class, 'update']);
 Route::get('delete-student/{id}', [App\Http\Controllers\StudentController::class, 'destroy']);
 
+//STUDENTS - USING MODEL
+Route::get('phones', [App\Http\Controllers\PhoneController::class, 'index']);
+Route::get('add-phone', [App\Http\Controllers\PhoneController::class, 'create']);
+Route::post('store-phone', [App\Http\Controllers\PhoneController::class, 'store']);
+Route::get('edit-phone/{id}', [App\Http\Controllers\PhoneController::class, 'edit']);
+Route::post('update-phone/{id}', [App\Http\Controllers\PhoneController::class, 'update']);
+Route::get('delete-phone/{id}', [App\Http\Controllers\PhoneController::class, 'destroy']);
+
 
 // BLADE TEMPLATE - Tuts
 Route::get('test', function () {
