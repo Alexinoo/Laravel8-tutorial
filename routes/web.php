@@ -166,3 +166,8 @@ Route::get('add-employee', [App\Http\Controllers\EmployeeController::class, 'cre
 Route::post('store-employee', [App\Http\Controllers\EmployeeController::class, 'store']);
 Route::get('export-excel', [App\Http\Controllers\EmployeeController::class, 'exportIntoExcel']);
 Route::get('export-csv', [App\Http\Controllers\EmployeeController::class, 'exportIntoCSV']);
+
+
+// CONTACT US
+Route::get('contact', [App\Http\Controllers\ContactController::class, 'index']);
+Route::post('send-message', [App\Http\Controllers\ContactController::class, 'SendEmail']);
