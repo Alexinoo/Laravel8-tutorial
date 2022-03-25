@@ -14,9 +14,7 @@
                     </h4>
                 </div>
                 <div class="card-body">
-                        @if(Session::has('status'))
-                        <div class="alert alert-success">{{Session::get('status')}}</div>
-                    @endif
+                    
                       <table class="table table-striped">
                             <thead>
                                 <tr>
@@ -52,6 +50,52 @@
                     </div>    
         </div>
     </div>
-</div>
+</div>    
+@endsection
+
+
+@section('scripts')
+
+ <script>
+  @if(Session::has('status'))
+  toastr.options =
+  {
+  	"closeButton" : true,
+  	"progressBar" : true,
+    "positionClass" : 'toast-bottom-right'
+  }
+  		toastr.success("{{ session('status') }}");
+  @endif
+
+  @if(Session::has('error'))
+  toastr.options =
+  {
+  	"closeButton" : true,
+  	"progressBar" : true,
+    "positionClass" : 'toast-bottom-right'
+  }
+  		toastr.error("{{ session('error') }}");
+  @endif
+
+  @if(Session::has('info'))
+  toastr.options =
+  {
+  	"closeButton" : true,
+  	"progressBar" : true,
+    "positionClass" : 'toast-bottom-right'
+  }
+  		toastr.info("{{ session('info') }}");
+  @endif
+
+  @if(Session::has('warning'))
+  toastr.options =
+  {
+  	"closeButton" : true,
+  	"progressBar" : true,
+    "positionClass" : 'toast-bottom-right'
+  }
+  		toastr.warning("{{ session('warning') }}");
+  @endif
+</script>
     
 @endsection

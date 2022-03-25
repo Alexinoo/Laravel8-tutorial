@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Student;
+use Brian2694\Toastr\Facades\Toastr;
 
 class StudentController extends Controller
 {
@@ -38,7 +39,7 @@ class StudentController extends Controller
             $student->course = $validatedData['course'];
             $student->save();
 
-            return redirect('students')->with('status', 'Student Added Successfully');
+            return redirect('students')->with('status', 'Student Added successfully');
         }
     }
 

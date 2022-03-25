@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css')}}">
+
+    {{-- Toastr --}}
+      <link rel="stylesheet" href="{{ asset('assets/css/toastr.min.css')}}">
       <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -24,10 +27,16 @@
 
     @include('layouts.inc.navbar')
 
-    @yield('content')
-    
+    @yield('content')    
 
 <script src="{{ asset('assets/js/jquery-3.6.0.min.js')}}"></script>
+
+{{-- Toastr --}}
+<script src="{{ asset('assets/js/toastr.min.js')}}"></script>
+
  <script src="{{ asset('assets/js/bootstrap.bundle.min.js')}}"></script>  
+
+    @yield('scripts')
+
 </body>
 </html>
