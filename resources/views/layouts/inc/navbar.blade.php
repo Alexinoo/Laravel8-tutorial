@@ -25,6 +25,9 @@
             <li><a class="dropdown-item" href="{{ url('employees')}}">Employees</a></li>        
           </ul>
         </li>
+          <li class="nav-item">
+          <a class="nav-link" href="{{ url('contact')}}">Contact Us</a>
+        </li>
    
       </ul>
     
