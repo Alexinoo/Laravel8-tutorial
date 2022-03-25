@@ -22,6 +22,7 @@
             <li><a class="dropdown-item" href="{{ url('students')}}">Students</a></li>        
             <li><a class="dropdown-item" href="{{ url('phones')}}">Phone</a></li>        
             <li><a class="dropdown-item" href="{{ url('upload')}}">File Upload</a></li>        
+            <li><a class="dropdown-item" href="{{ url('employees')}}">Employees</a></li>        
           </ul>
         </li>
    
