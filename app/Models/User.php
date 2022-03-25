@@ -41,4 +41,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    //ADD PARENT TO CHILD RELATIONSHIP
+    public function phone()
+    {
+        return  $this->hasOne('App\Models\Phone');
+    }
 }
