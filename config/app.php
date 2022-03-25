@@ -239,7 +239,7 @@ return [
         // Register Payment Facades in the aliases
         'Payment' => App\PaymentGateway\PaymentFacade::class,
 
-        // Register Payment Facades in the aliases
+        // Register Maatwebsite Facades in the aliases
         'Excel' => \Maatwebsite\Excel\Facades\Excel::class,
 
     ],
