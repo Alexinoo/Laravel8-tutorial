@@ -117,7 +117,7 @@ Route::get('edit-student/{id}', [App\Http\Controllers\StudentController::class, 
 Route::post('update-student/{id}', [App\Http\Controllers\StudentController::class, 'update']);
 Route::get('delete-student/{id}', [App\Http\Controllers\StudentController::class, 'destroy']);
 
-//STUDENTS - USING MODEL
+//PHONE - USING MODEL
 Route::get('phones', [App\Http\Controllers\PhoneController::class, 'index']);
 Route::get('add-phone', [App\Http\Controllers\PhoneController::class, 'create']);
 Route::post('store-phone', [App\Http\Controllers\PhoneController::class, 'store']);
@@ -158,3 +158,11 @@ Route::get('payment', function () {
 // SEND EMAIL
 
 Route::get('send-email', [MailController::class, 'SendEmail']);
+
+
+//EMPLOYEE - USING MODEL
+Route::get('employees', [App\Http\Controllers\EmployeeController::class, 'index']);
+Route::get('add-employee', [App\Http\Controllers\EmployeeController::class, 'create']);
+Route::post('store-employee', [App\Http\Controllers\EmployeeController::class, 'store']);
+Route::get('export-excel', [App\Http\Controllers\EmployeeController::class, 'exportIntoExcel']);
+Route::get('export-csv', [App\Http\Controllers\EmployeeController::class, 'exportIntoCSV']);
