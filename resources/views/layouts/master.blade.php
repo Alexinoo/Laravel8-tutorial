@@ -34,6 +34,9 @@
 {{-- Toastr --}}
 <script src="{{ asset('assets/js/toastr.min.js')}}"></script>
 
+{{-- Sweet Alert --}}
+<script src="{{ asset('assets/js/sweetalert.min.js')}}"></script>
+
  <script src="{{ asset('assets/js/bootstrap.bundle.min.js')}}"></script>  
 
     @yield('scripts')
