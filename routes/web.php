@@ -125,6 +125,15 @@ Route::post('update-phone/{id}', [App\Http\Controllers\PhoneController::class, '
 Route::get('delete-phone/{id}', [App\Http\Controllers\PhoneController::class, 'destroy']);
 
 
+//COMMENTS - USING MODEL
+Route::get('comments', [App\Http\Controllers\CommentController::class, 'index']);
+Route::get('add-comment', [App\Http\Controllers\CommentController::class, 'create']);
+Route::post('store-comment', [App\Http\Controllers\CommentController::class, 'store']);
+Route::get('edit-comment/{id}', [App\Http\Controllers\CommentController::class, 'edit']);
+Route::post('update-comment/{id}', [App\Http\Controllers\CommentController::class, 'update']);
+Route::get('delete-comment/{id}', [App\Http\Controllers\CommentController::class, 'destroy']);
+
+
 // BLADE TEMPLATE - Tuts
 Route::get('test', function () {
 
