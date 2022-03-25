@@ -18,6 +18,7 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="{{ url('post')}}">Posts</a></li>        
+            <li><a class="dropdown-item" href="{{ url('comments')}}">Comments</a></li>        
             <li><a class="dropdown-item" href="{{ url('students')}}">Students</a></li>        
             <li><a class="dropdown-item" href="{{ url('phones')}}">Phone</a></li>        
             <li><a class="dropdown-item" href="{{ url('upload')}}">File Upload</a></li>        
