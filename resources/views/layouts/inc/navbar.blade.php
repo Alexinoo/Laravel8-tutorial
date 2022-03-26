@@ -24,6 +24,7 @@
             <li><a class="dropdown-item" href="{{ url('upload')}}">File Upload</a></li>        
             <li><a class="dropdown-item" href="{{ url('employees')}}">Employees</a></li>        
             <li><a class="dropdown-item" href="{{ url('resize-image')}}">Resize Image</a></li>        
+            <li><a class="dropdown-item" href="{{ url('dropzone')}}">DropZone</a></li>        
           </ul>
         </li>
           <li class="nav-item">
