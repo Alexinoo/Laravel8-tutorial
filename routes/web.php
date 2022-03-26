@@ -184,3 +184,6 @@ Route::post('dropzone', [App\Http\Controllers\DropzoneController::class, 'store'
 
 // LAZYLOADING
 Route::get('gallery', [App\Http\Controllers\GalleryController::class, 'gallery']);
+
+// TinyMCE WYSIWYG EDITOR
+Route::get('editor', [App\Http\Controllers\EditorController::class, 'editor']);
