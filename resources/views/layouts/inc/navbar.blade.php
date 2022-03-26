@@ -26,6 +26,7 @@
             <li><a class="dropdown-item" href="{{ url('resize-image')}}">Resize Image</a></li>        
             <li><a class="dropdown-item" href="{{ url('dropzone')}}">DropZone</a></li>        
             <li><a class="dropdown-item" href="{{ url('gallery')}}">LazyLoad</a></li>        
+            <li><a class="dropdown-item" href="{{ url('editor')}}">Tinymce WYSWIG EDITOR</a></li>        
           </ul>
         </li>
           <li class="nav-item">
