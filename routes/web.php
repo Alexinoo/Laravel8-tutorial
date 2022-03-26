@@ -180,3 +180,7 @@ Route::post('resize-image', [App\Http\Controllers\ImageController::class, 'uploa
 // DROPZONE
 Route::get('dropzone', [App\Http\Controllers\DropzoneController::class, 'dropzone']);
 Route::post('dropzone', [App\Http\Controllers\DropzoneController::class, 'store']);
+
+
+// LAZYLOADING
+Route::get('gallery', [App\Http\Controllers\GalleryController::class, 'gallery']);
