@@ -66,6 +66,10 @@
   <script src="https://cdn.tiny.cloud/1/0gcisrkpl5l82tzjnskq8exk8284ar6s1wckvq7qcs7921ez/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 
 
+  
+{{-- AUTOCOMPLETE  Typeahead -  js --}}
+ <script src="{{ asset('assets/js/bootstrap3-typeahead.min.js')}}"></script>  
+
     @yield('scripts')
 
 </body>
