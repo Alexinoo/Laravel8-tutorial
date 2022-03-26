@@ -9,6 +9,10 @@
 
     {{-- Toastr --}}
       <link rel="stylesheet" href="{{ asset('assets/css/toastr.min.css')}}">
+
+    {{-- Dropzone min css --}}
+      <link rel="stylesheet" href="{{ asset('assets/css/dropzone.min.css')}}">
+
       <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -37,7 +41,11 @@
 {{-- Sweet Alert --}}
 <script src="{{ asset('assets/js/sweetalert.min.js')}}"></script>
 
+{{-- Bootstrap bundle js --}}
  <script src="{{ asset('assets/js/bootstrap.bundle.min.js')}}"></script>  
+
+{{-- Dropzone js --}}
+ <script src="{{ asset('assets/js/dropzone.min.js')}}"></script>  
 
     @yield('scripts')
 
