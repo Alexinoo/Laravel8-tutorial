@@ -187,3 +187,7 @@ Route::get('gallery', [App\Http\Controllers\GalleryController::class, 'gallery']
 
 // TinyMCE WYSIWYG EDITOR
 Route::get('editor', [App\Http\Controllers\EditorController::class, 'editor']);
+
+
+//HELPERS
+Route::get('get-name', [App\Http\Controllers\TestController::class, 'getFirstLastname']);
