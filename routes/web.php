@@ -191,3 +191,8 @@ Route::get('editor', [App\Http\Controllers\EditorController::class, 'editor']);
 
 //HELPERS
 Route::get('get-name', [App\Http\Controllers\TestController::class, 'getFirstLastname']);
+
+//SEARCH PRODUCTS
+Route::get('add-product', [App\Http\Controllers\ProductController::class, 'addProduct']);
+Route::get('search-product', [App\Http\Controllers\ProductController::class, 'searchProduct']);
+Route::get('autocomplete', [App\Http\Controllers\ProductController::class, 'autocomplete']);
