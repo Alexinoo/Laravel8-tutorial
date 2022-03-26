@@ -27,14 +27,18 @@
 
 @section('scripts')
     <script>
-        let path = "{{ url('autocomplete')}}";
+        $(document).ready(function(){
+                 
+            let path = "{{ url('autocomplete')}}";
 
-        $('input.typeahead').typeahead({
-            source: function(terms ,process){
-                return $.get(path , {terms:terms} , function(data){
-                     return process(data);
-                });
-            }
-        })
+            $('input.typeahead').typeahead({
+                source: function(terms ,process){
+                    return $.get(path , {terms:terms} , function(data){
+                        return process(data);
+                    });
+                }
+            });
+    });
+      
     </script>
 @endsection
