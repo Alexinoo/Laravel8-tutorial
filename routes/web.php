@@ -176,3 +176,7 @@ Route::post('send-message', [App\Http\Controllers\ContactController::class, 'Sen
 // RESIZE IMAGE
 Route::get('resize-image', [App\Http\Controllers\ImageController::class, 'resizeImage']);
 Route::post('resize-image', [App\Http\Controllers\ImageController::class, 'upload']);
+
+// DROPZONE
+Route::get('dropzone', [App\Http\Controllers\DropzoneController::class, 'dropzone']);
+Route::post('dropzone', [App\Http\Controllers\DropzoneController::class, 'store']);
