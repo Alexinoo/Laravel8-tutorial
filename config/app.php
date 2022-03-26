@@ -168,6 +168,12 @@ return [
         // Register Excel Service Provider
         \Maatwebsite\Excel\ExcelServiceProvider::class,
 
+        // Register Yajra-Datatables Service Provider
+        \Yajra\DataTables\DataTablesServiceProvider::class,
+
+        // Register Intervention-Image Service Provider
+        \Intervention\Image\ImageServiceProvider::class,
+
         /*
          * Package Service Providers...
          */
@@ -241,6 +247,12 @@ return [
 
         // Register Maatwebsite Facades in the aliases
         'Excel' => \Maatwebsite\Excel\Facades\Excel::class,
+
+        // Register Yajra Facades in the aliases
+        'DataTables' => \Yajra\DataTables\Facades\DataTables::class,
+
+        // Register \Intevention\Image Facades in the aliases
+        'Image' => \Intevention\Image\Facades\Image::class,
 
     ],
 
