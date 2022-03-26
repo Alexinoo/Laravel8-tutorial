@@ -171,3 +171,8 @@ Route::get('export-csv', [App\Http\Controllers\EmployeeController::class, 'expor
 // CONTACT US
 Route::get('contact', [App\Http\Controllers\ContactController::class, 'index']);
 Route::post('send-message', [App\Http\Controllers\ContactController::class, 'SendEmail']);
+
+
+// RESIZE IMAGE
+Route::get('resize-image', [App\Http\Controllers\ImageController::class, 'resizeImage']);
+Route::post('resize-image', [App\Http\Controllers\ImageController::class, 'upload']);
