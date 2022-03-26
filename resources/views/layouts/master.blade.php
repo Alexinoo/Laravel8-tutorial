@@ -25,6 +25,15 @@
             body {
                 font-family: 'Nunito', sans-serif;
             }
+
+            img {
+                background-color: #eee;
+                height: 250px;
+                width: 100%;
+                border: 1px solid #eee;
+                margin-top: 20px;
+                box-shadow: 0px 8px 6px -6px black;
+            }
         </style>
 </head>
 <body>
@@ -46,6 +55,9 @@
 
 {{-- Dropzone js --}}
  <script src="{{ asset('assets/js/dropzone.min.js')}}"></script>  
+
+{{-- JQuery Lazyload js --}}
+ <script src="{{ asset('assets/js/jquery.lazyload.min.js')}}"></script>  
 
     @yield('scripts')
 
