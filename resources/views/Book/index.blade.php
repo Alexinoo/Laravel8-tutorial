@@ -45,16 +45,17 @@
                 <div class="card-header text-center">
                     <h4>Books
                         <a class="btn btn-info float-end" data-bs-toggle="modal" data-bs-target="#bookModal">Add Book</a>
+                        <a class="btn btn-danger deleteAllSelectedRecords  mr-5 float-end">Delete All</a>
                     </h4>
                 </div>
                 <div class="card-body">                   
                       <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th>#</th>
+                                    <th><input type="checkbox" id ="checkAll" name="ids[]" /></th>
                                     <th>Isbn</th>
                                     <th>Title</th>                                    
-                                    <th>Author</th>                                    
+                                    <th>Author</th>                                   
                                     <th>Operations</th>                                    
                                 </tr>
                             </thead>
@@ -87,12 +88,12 @@
 
                  //LOOP THROUGH THE ARRAY OF BOOKS
                  $.each(response.books , function(index , book){
-                     $('tbody').append(`<tr>
-                                        <td>${book.id}</td>
+                     $('tbody').append(`<tr id="sid${book.id}">
+                                        <td><input type="checkbox" name="ids"  class="checkBoxClass" value="${book.id}" /></td>
                                         <td>${book.isbn}</td>
                                         <td>${book.title}</td>
                                         <td>${book.author}</td>
-                                        <td>
+                                       <td>
                                         <button type="button" class="btn btn-primary btn-sm edit_book" value="${book.id}">Edit</button>
 
                                         <button type="button" class="btn btn-danger btn-sm delete_book" value="${book.id}">Delete</button>
@@ -184,7 +185,7 @@
         })
 
 
-        //DELETE BOOK
+        //DELETE SINGLE BOOK
           $(document).on('click','.delete_book',function(e){
             e.preventDefault();
 
@@ -197,7 +198,7 @@
             });
 
             if(confirm('Are you sure you want to delete this record..?')){
-                
+
                  $.ajax({
                 url : `delete-book/${id} `,
                 type  : 'POST',
@@ -209,13 +210,54 @@
                 }
             }); 
             }
-             
 
             fetchBook();
-            
         });
 
-    });
+        //DELETE MULTIPLE REORDS USING CHECKBOX
+        //Grab on click
+          $(document).on('click','#checkAll',function(){
+         
+            //Check All
+             $('.checkBoxClass').prop('checked' , $(this).prop('checked'))
+
+            //  on Click Delete All
+             $('.deleteAllSelectedRecords').click(function(e){
+
+                let allIds = [];
+
+                if(allIds.length > 0){
+
+                // loop through the selected checkboxes with $.each()
+                $('input:checkbox[name=ids]:checked').each(function(){
+                    allIds.push( $(this).val());
+                });
+
+                   $.ajaxSetup({
+                         headers: {
+                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                            }
+                        });
+              if(confirm('Are you sure you want to delete this record..?')){
+                 $.ajax({
+                url : `delete-batch/${allIds}`,
+                type  : 'DELETE',
+                dataType: "json",
+                success : function(response){
+                   $.each(allIds , function(index ,value ){
+                       $('#sid'+value).remove();
+                   })
+                }
+            }); 
+        }
+        fetchBook();
+           }else{
+               alert('No records selected/available for deletion..');
+           }
+     })
+
+  }); 
+});
 
 </script>
     
