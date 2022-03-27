@@ -195,7 +195,10 @@
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
-              $.ajax({
+
+            if(confirm('Are you sure you want to delete this record..?')){
+                
+                 $.ajax({
                 url : `delete-book/${id} `,
                 type  : 'POST',
                 dataType: "json",
@@ -205,6 +208,8 @@
                      $('#successMsg').text(response.message).fadeOut(4000); //Fade out after 
                 }
             }); 
+            }
+             
 
             fetchBook();
             
