@@ -18,6 +18,9 @@
     {{-- Dropzone min css --}}
       <link rel="stylesheet" href="{{ asset('assets/css/dropzone.min.css')}}">
 
+    {{-- Jquery Datatables min.css --}}
+      <link rel="stylesheet" href="{{ asset('assets/css/jquery.dataTables.min.css')}}">
+
       <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -71,6 +74,9 @@
   
 {{-- AUTOCOMPLETE  Typeahead -  js --}}
  <script src="{{ asset('assets/js/bootstrap3-typeahead.min.js')}}"></script>  
+  
+{{-- JQUERY DATATABLES   min.js --}}
+ <script src="{{ asset('assets/js/jquery.dataTables.min.js')}}"></script>  
 
     @yield('scripts')
 
