@@ -58,20 +58,7 @@
                                     <th>Operations</th>                                    
                                 </tr>
                             </thead>
-                            <tbody>
-                                @foreach($books as $key => $value)
-                                    <tr>
-                                        <td>{{ $value->id}}</td>
-                                        <td>{{ $value->isbn}}</td>
-                                        <td>{{ $value->title}}</td>
-                                        <td>{{ $value->author}}</td>
-                                        <td>
-                                            <a href="{{ url('edit-book/'.$value->id)}}" class="btn btn-primary btn-sm">Edit</a>
-                                            <a href="{{ url('delete-book/'.$value->id)}}" class="btn btn-danger btn-sm">Delete</a>
-                                        </td>
-                                    </tr>
-                                @endforeach
-                                            
+                            <tbody>                                       
                             </tbody>
                         </table>
                     </div>
@@ -87,7 +74,41 @@
 <script>
     $(document).ready(function(){
 
-        // Grab the form
+        // FETCH BOOKS
+        function fetchBook(){
+              $.ajax({
+                url : "fetch-books" ,
+                type  : 'GET',
+                dataType: "json",
+                success : function(response){
+                
+                //EMPTY THE TBODY  FIRST - WHEN THE FUNCTION LOADS
+                 $('tbody').html(" ");
+
+                 //LOOP THROUGH THE ARRAY OF BOOKS
+                 $.each(response.books , function(index , book){
+                     $('tbody').append(`<tr>
+                                        <td>${book.id}</td>
+                                        <td>${book.isbn}</td>
+                                        <td>${book.title}</td>
+                                        <td>${book.author}</td>
+                                        <td>
+                                        <button type="button" class="btn btn-primary btn-sm edit_book" value="${book.id}">Edit</button>
+
+                                        <button type="button" class="btn btn-danger btn-sm delete_book" value="${book.id}">Delete</button>
+                                        </td>
+                                    </tr>`);
+                 });
+                }
+            });
+        }
+
+        //Call the function
+        fetchBook();
+
+        //ADDING A BOOK
+
+        // Grab the add_book click
         $(document).on('click','.add_book',function(e){
             e.preventDefault();
 
@@ -144,6 +165,9 @@
                            $('#bookModal').modal('hide');
                            //EMPTY THE INPUT FIELDS
                            $('#bookModal').find('input').val("");
+
+                           //FETCH STUDENTS
+                           fetchBook();
 
                     }
                   
