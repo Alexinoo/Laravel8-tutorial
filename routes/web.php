@@ -201,3 +201,4 @@ Route::get('autocomplete', [App\Http\Controllers\ProductController::class, 'auto
 //BBOKS - USING AJAX CRUD
 Route::get('books', [App\Http\Controllers\BookController::class, 'index']);
 Route::post('books', [App\Http\Controllers\BookController::class, 'store']);
+Route::get('fetch-books', [App\Http\Controllers\BookController::class, 'fetchBooks']);
