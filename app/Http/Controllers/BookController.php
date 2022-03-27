@@ -128,4 +128,16 @@ class BookController extends Controller
             'message' => 'Book deleted successfully'
         ]);
     }
+    //DELETE BATCH RECORDS
+    public function deleteBatch(Request $request, $ids)
+    {
+        // Split the array
+        $allIDS = explode(',', $ids);
+
+        Book::whereIn('id', $allIDS)->delete();
+
+        return response()->json([
+            'message' => 'Records deleted successfully'
+        ]);
+    }
 }
