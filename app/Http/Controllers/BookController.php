@@ -109,12 +109,23 @@ class BookController extends Controller
         //
     }
 
-    //
+    //FETCH BOOK RECORDS
     public function fetchBooks()
     {
         $books = Book::all();
         return response()->json([
             'books' => $books
+        ]);
+    }
+
+    //DELETE BOOK RECORDS
+    public function deleteBook($id)
+    {
+        $book = Book::find($id);
+        $book->delete();
+
+        return response()->json([
+            'message' => 'Book deleted successfully'
         ]);
     }
 }
