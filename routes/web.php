@@ -196,3 +196,8 @@ Route::get('get-name', [App\Http\Controllers\TestController::class, 'getFirstLas
 Route::get('add-product', [App\Http\Controllers\ProductController::class, 'addProduct']);
 Route::get('search-product', [App\Http\Controllers\ProductController::class, 'searchProduct']);
 Route::get('autocomplete', [App\Http\Controllers\ProductController::class, 'autocomplete']);
+
+
+//BBOKS - USING AJAX CRUD
+Route::get('books', [App\Http\Controllers\BookController::class, 'index']);
+Route::post('books', [App\Http\Controllers\BookController::class, 'store']);
