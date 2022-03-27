@@ -72,7 +72,7 @@
 
 @section('scripts')
 <script>
-    $(document).ready(function(){
+    $(document).ready(function(){     
 
         // FETCH BOOKS
         function fetchBook(){
@@ -157,7 +157,8 @@
                    
                     }else{
                           //EMPTY THE ERROR LIST
-                           $('span').empty();                 
+                           $('span').empty(); 
+                           $('#successMsg').html("");                
                            $('#successMsg').addClass('alert alert-success');
                            $('#successMsg').text(response.message).fadeOut(4000); //Fade out after 4 sec
 
@@ -181,6 +182,33 @@
              //REMOVES <p>errors</p>
              $('span').empty();                    
         })
+
+
+        //DELETE BOOK
+          $(document).on('click','.delete_book',function(e){
+            e.preventDefault();
+
+            //GRAB the value
+            let  id = $(this).val();
+                $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+              $.ajax({
+                url : `delete-book/${id} `,
+                type  : 'POST',
+                dataType: "json",
+                success : function(response){
+                     $('#successMsg').html("");
+                     $('#successMsg').addClass('alert alert-success');
+                     $('#successMsg').text(response.message).fadeOut(4000); //Fade out after 
+                }
+            }); 
+
+            fetchBook();
+            
+        });
 
     });
 
