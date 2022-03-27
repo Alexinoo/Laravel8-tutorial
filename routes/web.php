@@ -203,3 +203,4 @@ Route::get('books', [App\Http\Controllers\BookController::class, 'index']);
 Route::post('books', [App\Http\Controllers\BookController::class, 'store']);
 Route::get('fetch-books', [App\Http\Controllers\BookController::class, 'fetchBooks']);
 Route::post('delete-book/{id}', [App\Http\Controllers\BookController::class, 'deleteBook']);
+Route::delete('delete-batch/{ids}', [App\Http\Controllers\BookController::class, 'deleteBatch']);
