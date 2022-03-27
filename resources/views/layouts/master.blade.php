@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    {{-- csrf-token  --}}
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css')}}">
 
@@ -61,10 +66,7 @@
 
 
 {{-- Tinymce WYSWIG EDITOR js --}}
- <script src="{{ asset('assets/js/tinymce.min.js')}}" referrerpolicy="origin"></script>  
-
-  <script src="https://cdn.tiny.cloud/1/0gcisrkpl5l82tzjnskq8exk8284ar6s1wckvq7qcs7921ez/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-
+ <script src="{{ asset('assets/js/tinymce.min.js')}}" ></script>  
 
   
 {{-- AUTOCOMPLETE  Typeahead -  js --}}
