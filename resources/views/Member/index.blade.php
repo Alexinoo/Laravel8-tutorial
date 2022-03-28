@@ -54,20 +54,7 @@
                                     <th>Operations</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                @foreach($members as $key => $value)
-                                    <tr>
-                                        <td>{{ $value->id}}</td>
-                                        <td>{{ $value->name}}</td>
-                                        <td>{{ $value->email }}</td>
-                                        <td>
-                                            <a href="{{ url('edit-member/'. $value->id)}}" class="btn btn-info">Edit</a>
-                                            <a href="{{ url('delete-student/'. $value->id)}}" class="btn btn-danger">Delete</a>
-                                        </td>
-                                    </tr>
-                                @endforeach
-                                            
-                            </tbody>
+                            <tbody></tbody>
                         </table>
                     </div>
                 </div> 
@@ -108,7 +95,7 @@ $(function(){
 
     });
 
-    // on asve click
+    // on Save click
       $('#saveBtn').click(function(e){
           e.preventDefault();
           $(this).html('Save');
@@ -128,9 +115,30 @@ $(function(){
                     console.log('Error :' ,error);
                      $('#saveBtn').html('Save');
                 }
-            })
+            });
 
        });
+
+       // on DELETE
+       $('body').on('click','.deleteMember',function(){
+
+       let member_id = $(this).data("id");
+       
+       if( confirm("Are you sure you want to delete...? ")){
+         $.ajax({
+                url : `{{ route('members.store')}}/${member_id}`,
+                type : 'DELETE',
+                success : function(response){
+
+                      table.draw();
+                },
+                error : function(error){
+                    console.log('Error :' ,error);
+                     $('#saveBtn').html('Save');
+                }
+            });
+       }
+       })
 })
 
    
