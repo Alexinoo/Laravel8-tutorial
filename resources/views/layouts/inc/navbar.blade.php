@@ -18,6 +18,7 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="{{ url('books')}}">AJAX CRUD</a></li>        
+            <li><a class="dropdown-item" href="{{ url('members')}}">AJAX CRUD II  </a></li>        
             <li><a class="dropdown-item" href="{{ url('post')}}">Posts</a></li>        
             <li><a class="dropdown-item" href="{{ url('comments')}}">Comments</a></li>        
             <li><a class="dropdown-item" href="{{ url('students')}}">Students</a></li>        
