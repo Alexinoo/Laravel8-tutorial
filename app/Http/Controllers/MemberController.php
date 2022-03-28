@@ -25,7 +25,7 @@ class MemberController extends Controller
                     // href="javascript:void(0)" - Means don't redirect to anywhere
                     $btn = '<a href="javascript:void(0)" data-toggle = "tooltip" data-id="' . $row->id . '" data-original-title="Edit" class=" edit btn btn-primary btn-sm editMember" >Edit</a>';
 
-                    $btn .= '<a href="javascript:void(0)" data-toggle = "tooltip" data-id="' . $row->id . '" data-original-title="Delete" class=" edit btn btn-danger btn-sm editMember" >Edit</a>';
+                    $btn .= '<a href="javascript:void(0)" data-toggle = "tooltip" data-id="' . $row->id . '" data-original-title="Delete" class=" edit btn btn-danger btn-sm editMember" >Delete</a>';
 
                     return $btn;
                 })
@@ -55,7 +55,14 @@ class MemberController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Member::updateOrCreate(['id' => $request->member_id], [
+            'name' => $request->name,
+            'email' => $request->email,
+        ]);
+
+        return response()->json([
+            'success' => 'Member Added successfully',
+        ]);
     }
 
     /**
