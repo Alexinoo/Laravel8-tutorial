@@ -161,7 +161,11 @@
                            $('span').empty(); 
                            $('#successMsg').html("");                
                            $('#successMsg').addClass('alert alert-success');
-                           $('#successMsg').text(response.message).fadeOut(4000); //Fade out after 4 sec
+                           $('#successMsg').text(response.message);
+                            setTimeout(() => {
+                                    $('#successMsg').text("");
+                                  $('#successMsg').removeClass('alert alert-success');
+                            }, 4000);
 
                            //HIDE MODAL
                            $('#bookModal').modal('hide');
@@ -206,7 +210,13 @@
                 success : function(response){
                      $('#successMsg').html("");
                      $('#successMsg').addClass('alert alert-success');
-                     $('#successMsg').text(response.message).fadeOut(4000); //Fade out after 
+                     $('#successMsg').text(response.message);
+
+                        setTimeout(() => {
+                                    $('#successMsg').text("");
+                                  $('#successMsg').removeClass('alert alert-success');
+                            }, 4000);
+
                 }
             }); 
             }
@@ -226,12 +236,12 @@
 
                 let allIds = [];
 
-                if(allIds.length > 0){
-
                 // loop through the selected checkboxes with $.each()
                 $('input:checkbox[name=ids]:checked').each(function(){
                     allIds.push( $(this).val());
                 });
+
+                   if(allIds.length > 0){
 
                    $.ajaxSetup({
                          headers: {
