@@ -13,7 +13,7 @@
       </div>
       <div class="modal-body">
        <form action="" id="memberForm" name="memberForm" class="form-horizontal">
-           <input type="hidden" name="member_id" id="member_id" />
+           <input type="text" name="member_id" id="member_id" />
             <div class="form-group mb-3">
                 <label for="name">Name</label>
                 <input type="text" name="name" id="name" class="form-control" value="" placeholder="Enter Name">
@@ -120,7 +120,7 @@ $(function(){
        });
 
        // on DELETE
-       $('body').on('click','.deleteMember',function(){
+       $(document).on('click','.deleteMember',function(){
 
        let member_id = $(this).data("id");
        
@@ -138,6 +138,23 @@ $(function(){
                 }
             });
        }
+       })
+       // on EDIT
+       $('body').on('click','.editMember',function(){
+
+       let member_id = $(this).data("id");
+
+       let url = `{{ route('members.index')}}/${member_id}/edit`;
+       
+            $.get(url , function(data , status){
+
+                  $('#modalHeading').html('Edit Member');
+                    $('#ajaxModal').modal('show');
+                    // Get input fields
+                    $('#member_id').val(data.id);
+                    $('#name').val(data.name);
+                    $('#email').val(data.email);
+        });
        })
 })
 
