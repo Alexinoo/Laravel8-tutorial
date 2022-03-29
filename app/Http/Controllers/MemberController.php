@@ -15,7 +15,7 @@ class MemberController extends Controller
      */
     public function index(Request $request)
     {
-        $members = Member::all();
+        $members = Member::get();
 
         if ($request->ajax()) {
 
@@ -84,7 +84,9 @@ class MemberController extends Controller
      */
     public function edit($id)
     {
-        //
+        $member = Member::find($id);
+
+        return response()->json($member);
     }
 
     /**
