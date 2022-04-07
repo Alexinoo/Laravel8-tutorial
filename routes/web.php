@@ -209,3 +209,9 @@ Route::delete('delete-batch/{ids}', [App\Http\Controllers\BookController::class,
 
 //MEMBERS - USING AJAX CRUD / DATATABLES
 Route::resource('members', App\Http\Controllers\MemberController::class);
+
+
+
+// MULTI-STEP-FORM
+Route::get('form', [App\Http\Controllers\FormController::class, 'index']);
+Route::post('form', [App\Http\Controllers\FormController::class, 'formSubmit'])->name('form.formSubmit');
