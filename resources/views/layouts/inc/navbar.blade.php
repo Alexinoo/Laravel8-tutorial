@@ -30,6 +30,7 @@
             <li><a class="dropdown-item" href="{{ url('gallery')}}">LazyLoad</a></li>        
             <li><a class="dropdown-item" href="{{ url('editor')}}">WYSWIG EDITOR</a></li>        
             <li><a class="dropdown-item" href="{{ url('search-product')}}">Autocomplete Search</a></li>        
+            <li><a class="dropdown-item" href="{{ url('form')}}">Multistep Form</a></li>        
           </ul>
         </li>
           <li class="nav-item">
