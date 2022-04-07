@@ -10,6 +10,11 @@
 
 
     <title>@yield('title')</title>
+
+    {{-- Custom css --}}
+    <link rel="stylesheet" href="{{ asset('assets/css/custom.css')}}">
+
+    {{-- Bootstrap css --}}
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css')}}">
 
     {{-- Toastr --}}
@@ -77,6 +82,9 @@
   
 {{-- JQUERY DATATABLES   min.js --}}
  <script src="{{ asset('assets/js/jquery.dataTables.min.js')}}"></script>  
+  
+{{-- PARSLEY   parsley.min.js --}}
+ <script src="{{ asset('assets/js/parsley.min.js')}}"></script>  
 
     @yield('scripts')
 
