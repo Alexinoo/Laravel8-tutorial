@@ -215,3 +215,14 @@ Route::resource('members', App\Http\Controllers\MemberController::class);
 // MULTI-STEP-FORM
 Route::get('form', [App\Http\Controllers\FormController::class, 'index']);
 Route::post('form', [App\Http\Controllers\FormController::class, 'formSubmit'])->name('form.formSubmit');
+
+
+// IMAGE CRUD
+Route::get('workers', [App\Http\Controllers\WorkerController::class, 'index'])->name('all.workers');
+Route::get('add-worker', [App\Http\Controllers\WorkerController::class, 'create']);
+Route::post('add-worker', [App\Http\Controllers\WorkerController::class, 'store'])->name('worker.add');
+Route::get('edit-worker/{id}', [App\Http\Controllers\WorkerController::class, 'edit']);
+
+Route::post('update-worker', [App\Http\Controllers\WorkerController::class, 'update'])->name('worker.update');
+
+Route::get('delete-worker/{id}', [App\Http\Controllers\WorkerController::class, 'destroy']);
