@@ -32,7 +32,7 @@
             <li><a class="dropdown-item" href="{{ url('search-product')}}">Autocomplete Search</a></li>        
             <li><a class="dropdown-item" href="{{ url('form')}}">Multistep Form</a></li>
 
-            <li><a class="dropdown-item" href="{{ route('all.workers')}}">Image CRUD</a></li>        
+            <li><a class="dropdown-item" href="{{ route('all.workers')}}">Image CRUD (Toastr / sweet-alert)</a></li>        
           </ul>
         </li>
           <li class="nav-item">
