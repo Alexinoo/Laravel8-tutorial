@@ -13,10 +13,7 @@
                            <a href="{{route('all.workers')}}" class="btn btn-info float-end">Back</a>
                     </h5>
                 </div>
-                <div class="card-body">
-                       @if(session()->has('worker_added'))
-                        <div class="alert alert-success" role="alert">{{session('worker_added')}}</div>
-                    @endif
+                <div class="card-body">                     
                     <form action="{{ route('worker.add')}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group mb-3">
@@ -26,7 +23,7 @@
                         <div class="form-group mb-3">
                             <label for="file">Choose Profile Image</label>
                             <input type="file" name="file" id="" class="form-control" onchange="previewFile(this)" />
-                            <img src="" alt="profile image" id="previewImg"   style="max-width:200px;height:100px;margin-top:20px;" />
+                            <img src="" alt="profile image" id="previewImg"   style="max-width:200px;height:190px;margin-top:20px;" />
                         </div>
                             <div class="form-group mb-3">
                                 <button type="submit" class="btn btn-primary">Submit</button>
@@ -52,6 +49,13 @@
             reader.readAsDataURL(file)
         }
     }
+
+@if(Session::has('worker_added'))
+    swal("Great Job","{{ Session::get('worker_added') }}","success",{
+        button : "OK",
+    })  
+@endif
+
 </script>
     
 @endsection
