@@ -86,6 +86,12 @@
 {{-- PARSLEY   parsley.min.js --}}
  <script src="{{ asset('assets/js/parsley.min.js')}}"></script>  
 
+{{-- HIGHCHARTS   highcharts.js --}}
+ <script src="{{ asset('assets/js/highcharts.js')}}"></script>  
+
+{{-- HIGHCHARTS   highcharts.min.js --}}
+ <script src="{{ asset('assets/js/highcharts.min.js')}}"></script>  
+
     @yield('scripts')
 
 </body>
