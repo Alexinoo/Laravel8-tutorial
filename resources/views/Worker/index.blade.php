@@ -13,11 +13,7 @@
                         <a href="{{url('add-worker')}}" class="btn btn-info float-end">Add Worker</a>
                     </h5>
                 </div>
-                <div class="card-body">
-                     @if(session()->has('worker_deleted'))
-                        <div class="alert alert-success" >{{session('worker_deleted')}}
-                        </div>
-                    @endif
+                <div class="card-body">                   
                      <table class="table table-striped">
                          <thead>
                              <tr>
@@ -36,7 +32,7 @@
                                  <td><img src="{{ asset('images/'. $worker->profile_image)}}" alt="profile img" style="max-width:60px;height:50px"></td>
                                  <td>
                                      <a href="{{url('edit-worker/'.$worker->id)}}" class="btn btn-info btn-sm">Edit</a>
-                                     <a href="{{url('delete-worker/'.$worker->id)}}" class="btn btn-danger btn-sm">Delete</a>
+                                     <a href="{{url('delete-worker/'.$worker->id)}}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this worker..?')">Delete</a>
                                  </td>
                              </tr>
                              @endforeach
@@ -47,4 +43,15 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('scripts')
+<script>  
+@if(Session::has('worker_deleted'))
+    swal("Great Job","{{ Session::get('worker_deleted') }}","success",{
+        button : "OK",
+    })  
+@endif
+</script>
+    
 @endsection
