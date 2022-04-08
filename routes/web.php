@@ -226,3 +226,8 @@ Route::get('edit-worker/{id}', [App\Http\Controllers\WorkerController::class, 'e
 Route::post('update-worker', [App\Http\Controllers\WorkerController::class, 'update'])->name('worker.update');
 
 Route::get('delete-worker/{id}', [App\Http\Controllers\WorkerController::class, 'destroy']);
+
+
+
+// CHARTS - USED Users table
+Route::get('charts', [App\Http\Controllers\ChartController::class, 'index'])->name('all.users');
