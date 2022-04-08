@@ -50,12 +50,14 @@
         }
     }
 
-@if(Session::has('worker_added'))
-    swal("Great Job","{{ Session::get('worker_added') }}","success",{
-        button : "OK",
-    })  
-@endif
-
+  @if(Session::has('worker_added'))
+  toastr.options = {
+                "closeButton" : true,
+                "progressBar" : true,
+                "positionClass" : 'toast-bottom-right'
+            }
+  		toastr.success("{{ Session::get('worker_added') }}");
+  @endif
 </script>
     
 @endsection
