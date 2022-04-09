@@ -18,13 +18,13 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="{{ url('books')}}">AJAX CRUD</a></li>        
-            <li><a class="dropdown-item" href="{{ url('members')}}">AJAX CRUD II  </a></li>        
+            <li><a class="dropdown-item" href="{{ url('members')}}">AJAX CRUD II  (Yajra datatabe)</a></li>        
             <li><a class="dropdown-item" href="{{ url('post')}}">Posts</a></li>        
             <li><a class="dropdown-item" href="{{ url('comments')}}">Comments</a></li>        
             <li><a class="dropdown-item" href="{{ url('students')}}">Students</a></li>        
             <li><a class="dropdown-item" href="{{ url('phones')}}">Phone</a></li>        
             <li><a class="dropdown-item" href="{{ url('upload')}}">File Upload</a></li>        
-            <li><a class="dropdown-item" href="{{ url('employees')}}">Employees</a></li>        
+            <li><a class="dropdown-item" href="{{ url('employees')}}">Employees (Export Excel/Csv)</a></li>        
             <li><a class="dropdown-item" href="{{ url('resize-image')}}">Resize Image</a></li>        
             <li><a class="dropdown-item" href="{{ url('dropzone')}}">DropZone</a></li>        
             <li><a class="dropdown-item" href="{{ url('gallery')}}">LazyLoad</a></li>        
