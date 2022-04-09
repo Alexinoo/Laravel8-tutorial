@@ -41,15 +41,14 @@
             Charts
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-               <li><a class="dropdown-item" href="{{ route('all.users')}}">High Charts</a></li>      
+            
+               <li><a class="dropdown-item" href="{{ route('high.chart')}}">High Charts</a></li>      
+               <li><a class="dropdown-item" href="{{ route('bar.chart')}}">Bar Charts</a></li>      
           </ul>
         </li>
           <li class="nav-item">
           <a class="nav-link" href="{{ url('contact')}}">Contact Us</a>
-        </li>
-
-
-   
+        </li>   
       </ul>
     
     </div>
