@@ -16,10 +16,7 @@
                             <a href="{{url('comments')}}" class="btn btn-info float-end">Back</a>
                         </h5>
                     </div>
-                    <div class="card-body">
-                        @if(Session::has('status'))
-                            <div class="alert alert-success">{{ Session::get('status')}}</div>
-                        @endif
+                    <div class="card-body">                      
                         <form action="{{ url('store-comment')}}" method="POST">
                         @csrf
                             <div class="form-group mb-3">
@@ -46,4 +43,19 @@
             </div>
         </div>
     </div>
+@endsection
+
+
+@section('scripts')
+<script>
+  @if(Session::has('status'))
+  toastr.options = {
+                "closeButton" : true,
+                "progressBar" : true,
+                "positionClass" : 'toast-bottom-right'
+            }
+  		toastr.success("{{ Session::get('status') }}");
+  @endif
+</script>
+    
 @endsection
