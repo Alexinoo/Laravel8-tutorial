@@ -12,13 +12,13 @@
 
         Highcharts.chart('chart-container' , {
             title : {
-                text : 'New User Growth , 2020'
+                text : 'New User Growth , 2022'
             },
             subtitle : {
                 text : 'Source : Coding Pro'
             },
             xAxis : {
-                categories : ['Jan','Feb','Mar','Apr','May','Jun','May','Jun','Jul','Aug','Sep','Oct','Sep','Nov','Dec']
+                categories : ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
             },
             yAxis : {
                 title : 'No of New user'
