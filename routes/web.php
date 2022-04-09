@@ -229,5 +229,7 @@ Route::get('delete-worker/{id}', [App\Http\Controllers\WorkerController::class, 
 
 
 
-// CHARTS - USED Users table
-Route::get('charts', [App\Http\Controllers\ChartController::class, 'index'])->name('all.users');
+//HIGH  CHARTS - USED Users table
+Route::get('charts', [App\Http\Controllers\ChartController::class, 'index'])->name('high.chart');
+// BAR CHARTS - USED Users table
+Route::get('bar-charts', [App\Http\Controllers\BarchartController::class, 'index'])->name('bar.chart');
