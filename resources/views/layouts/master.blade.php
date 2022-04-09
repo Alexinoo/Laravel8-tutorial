@@ -92,6 +92,10 @@
 {{-- HIGHCHARTS   highcharts.min.js --}}
  <script src="{{ asset('assets/js/highcharts.min.js')}}"></script>  
 
+
+{{-- BAR CHARTS   chart.bundle.min.js --}}
+ <script src="{{ asset('assets/js/chart.bundle.min.js')}}"></script>  
+
     @yield('scripts')
 
 </body>
