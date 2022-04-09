@@ -233,3 +233,7 @@ Route::get('delete-worker/{id}', [App\Http\Controllers\WorkerController::class, 
 Route::get('charts', [App\Http\Controllers\ChartController::class, 'index'])->name('high.chart');
 // BAR CHARTS - USED Users table
 Route::get('bar-charts', [App\Http\Controllers\BarchartController::class, 'index'])->name('bar.chart');
+
+
+// MOVIES --INFINITE SCROLL PAGINATION
+Route::get('movies', [App\Http\Controllers\MovieController::class, 'index'])->name('all.movies');
