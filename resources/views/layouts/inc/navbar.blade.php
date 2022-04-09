@@ -32,7 +32,8 @@
             <li><a class="dropdown-item" href="{{ url('search-product')}}">Autocomplete Search</a></li>        
             <li><a class="dropdown-item" href="{{ url('form')}}">Multistep Form</a></li>
 
-            <li><a class="dropdown-item" href="{{ route('all.workers')}}">Image CRUD (Toastr / sweet-alert)</a></li>      
+            <li><a class="dropdown-item" href="{{ route('all.workers')}}">Image CRUD (Toastr / sweet-alert)</a></li>   
+               <li><a class="dropdown-item" href="{{ route('all.movies')}}">Infinite Scroll</a></li>         
           </ul>
         </li>
 
@@ -43,7 +44,8 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             
                <li><a class="dropdown-item" href="{{ route('high.chart')}}">High Charts</a></li>      
-               <li><a class="dropdown-item" href="{{ route('bar.chart')}}">Bar Charts</a></li>      
+               <li><a class="dropdown-item" href="{{ route('bar.chart')}}">Bar Charts</a></li>     
+            
           </ul>
         </li>
           <li class="nav-item">
