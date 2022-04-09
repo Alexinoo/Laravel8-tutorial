@@ -14,8 +14,8 @@
                     </h4>
                 </div>
                 <div class="card-body">
-                    
-                      <table class="table table-striped">
+                    <div class="table-rensponsive">                 
+                      <table class="table">
                             <thead>
                                 <tr>
                                     <th>#</th>
@@ -28,11 +28,12 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @php($i = 1)
                                 @foreach($employees as $key => $value)
                                     <tr>
-                                        <td>{{ $value->id }}</td>
+                                        <td>{{ $i++}}</td>
                                         <td>{{ $value->name }}</td>
-                                        <td>{{ $value->emai }}</td>
+                                        <td>{{ $value->email }}</td>
                                         <td>{{ $value->phone }}</td>
                                         <td>{{ $value->salary }}</td>
                                         <td>{{ $value->department }}</td>
@@ -48,6 +49,7 @@
                             </tbody>
                         </table>
                     </div>
+                  </div>
                 </div>  
         </div>
     </div>
