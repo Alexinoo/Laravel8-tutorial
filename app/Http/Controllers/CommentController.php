@@ -42,8 +42,8 @@ class CommentController extends Controller
         $comment->comment =  $request->comment;
         $comment->post_id =  $request->post_id;
         $comment->save();
-        
-        return redirect('comments')->with('status', 'Comment Added successfully');
+
+        return redirect()->back()->with('status', 'Comment Added successfully');
     }
 
     /**
