@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\DataTables\PupilDataTable;
 
 class PupilController extends Controller
 {
@@ -11,9 +12,9 @@ class PupilController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(PupilDataTable $dataTable)
     {
-        //
+        return $dataTable->render('Pupil.index');
     }
 
     /**
