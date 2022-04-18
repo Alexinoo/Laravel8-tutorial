@@ -20,7 +20,7 @@
             <li><a class="dropdown-item" href="{{ url('books')}}">AJAX CRUD</a></li>        
             <li><a class="dropdown-item" href="{{ url('members')}}">AJAX CRUD II  (Yajra datatabe)</a></li>        
             <li><a class="dropdown-item" href="{{ url('post')}}">Posts</a></li>        
-            <li><a class="dropdown-item" href="{{ url('comments')}}">Comments</a></li>        
+            <li><a class="dropdown-item" href="{{ url('comments')}}">Comments (Toastr)</a></li>        
             <li><a class="dropdown-item" href="{{ url('students')}}">Students</a></li>        
             <li><a class="dropdown-item" href="{{ url('phones')}}">Phone</a></li>        
             <li><a class="dropdown-item" href="{{ url('upload')}}">File Upload</a></li>        
