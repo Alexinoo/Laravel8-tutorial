@@ -22,12 +22,15 @@ class DatabaseSeeder extends Seeder
         // $this->call([StudentTableSeeder::class]);
 
         //populate data in movies table
-        $faker = Faker::create();
-        foreach (range(1, 100) as $index) {
-            DB::table('movies')->insert([
-                'title' => $faker->text(40),
-                'description' => $faker->text(300),
-            ]);
-        }
+        // $faker = Faker::create();
+        // foreach (range(1, 100) as $index) {
+        //     DB::table('movies')->insert([
+        //         'title' => $faker->text(40),
+        //         'description' => $faker->text(300),
+        //     ]);
+        // }
+
+        // populate data to pupils table
+        $this->call([PupilTableSeeder::class]);
     }
 }

@@ -10,6 +10,6 @@ class Pupil extends Model
     use HasFactory;
     protected $table = 'pupils';
     protected $fillable = [
-        'name', 'email', 'phone', 'salary', 'department',
+        'name', 'email', 'phone', 'salary', 'department'
     ];
 }
