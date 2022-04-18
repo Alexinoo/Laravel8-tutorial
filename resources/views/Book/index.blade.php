@@ -41,12 +41,14 @@
     <div class="row">
         <div class="col-md-12">
             <div id="successMsg" class="mt-3"></div>
-            <div class="card my-3">
-                <div class="card-header text-center">
-                    <h4>Books
-                        <a class="btn btn-info float-end" data-bs-toggle="modal" data-bs-target="#bookModal">Add Book</a>
-                        <a class="btn btn-danger deleteAllSelectedRecords  mr-5 float-end">Delete All</a>
-                    </h4>
+            <div class="card mt-3">
+                <div class="card-header">                 
+                        <h4 class="text-center">Books</h4>
+                          <div class="d-flex">
+                                <div class="mr-2"><a class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#bookModal">Add Book</a> </div>
+
+                            <div><a class="btn btn-danger btn-sm deleteAllSelectedRecords ">Delete All</a></div> 
+                   </div>
                 </div>
                 <div class="card-body">                   
                       <table class="table table-striped">
