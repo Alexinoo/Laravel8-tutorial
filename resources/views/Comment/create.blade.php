@@ -52,7 +52,7 @@
   toastr.options = {
                 "closeButton" : true,
                 "progressBar" : true,
-                "positionClass" : 'toast-bottom-right'
+                "positionClass" : 'toast-top-right'
             }
   		toastr.success("{{ Session::get('status') }}");
   @endif
