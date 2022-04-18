@@ -18,7 +18,8 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="{{ url('books')}}">AJAX CRUD</a></li>        
-            <li><a class="dropdown-item" href="{{ url('members')}}">AJAX CRUD II  (Yajra datatabe)</a></li>        
+            <li><a class="dropdown-item" href="{{ url('members')}}">AJAX CRUD II  (Ajax - Yajra datatabe)</a></li>        
+            <li><a class="dropdown-item" href="{{ route('all.pupils')}}">Pupils (PHP Yajra datatable)</a></li>        
             <li><a class="dropdown-item" href="{{ url('post')}}">Posts</a></li>        
             <li><a class="dropdown-item" href="{{ url('comments')}}">Comments (Toastr)</a></li>        
             <li><a class="dropdown-item" href="{{ url('students')}}">Students</a></li>        
