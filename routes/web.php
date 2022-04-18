@@ -237,3 +237,7 @@ Route::get('bar-charts', [App\Http\Controllers\BarchartController::class, 'index
 
 // MOVIES --INFINITE SCROLL PAGINATION
 Route::get('movies', [App\Http\Controllers\MovieController::class, 'index'])->name('all.movies');
+
+
+// pupils -- YAJRA DATATABLES
+Route::get('pupils', [App\Http\Controllers\PupilController::class, 'index'])->name('all.pupils');
